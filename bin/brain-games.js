@@ -2,4 +2,6 @@
 
 import getName from '../src/cli.js';
 
-getName();
+console.log('Welcome to the Brain Games!');
+const name = getName();
+console.log(`Hello, ${name}`);
