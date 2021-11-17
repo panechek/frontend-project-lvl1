@@ -1,19 +1,24 @@
-import readlineSync from 'readline-sync';
+import randomNumber from '../randomNumber.js';
 
-const evenGame = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const brainEven = () => {
+  const data = [];
+  data[0] = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const numVariant = [];
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * 100);
-    const rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    console.log(`Question:  ${randomNumber}`);
-    const answer = () => readlineSync.question('Your answer: ');
-    if (answer() === rightAnswer) {
-      console.log('Correct!');
-    } else {
-      return "'yes' is wrong answer ;(. Correct answer was 'no'.\n Let's try again";
+    const a = randomNumber(100);
+    let answer;
+    switch (a) {
+      case a % 2 === 0:
+        answer = 'yes';
+        break;
+      default:
+        answer = 'no';
+        break;
     }
+    numVariant.push([a, answer]);
   }
-  return 'Congratulations';
+  data[1] = numVariant;
+  return data;
 };
 
-export default evenGame;
+export default brainEven;
