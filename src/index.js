@@ -2,6 +2,7 @@ import getName from './cli.js';
 import brainEven from './games/even.js';
 import brainCalc from './games/calc.js';
 import brainGcd from './games/gcd.js';
+import brainProgression from './games/progression.js';
 import getAnswer from '../getAnswer.js';
 
 const gameStart = (gameName) => {
@@ -19,6 +20,9 @@ const gameStart = (gameName) => {
         break;
       case 'brainGcd':
         dataGame = brainGcd();
+        break;
+      case 'brainProgression':
+        dataGame = brainProgression();
         break;
       default:
         break;
