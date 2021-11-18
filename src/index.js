@@ -1,6 +1,7 @@
 import getName from './cli.js';
 import brainEven from './games/even.js';
 import brainCalc from './games/calc.js';
+import brainGcd from './games/gcd.js';
 import getAnswer from '../getAnswer.js';
 
 const gameStart = (gameName) => {
@@ -16,10 +17,14 @@ const gameStart = (gameName) => {
       case 'brainCalc':
         dataGame = brainCalc();
         break;
+      case 'brainGcd':
+        dataGame = brainGcd();
+        break;
       default:
         break;
     }
     console.log(dataGame[0]);
+    let winner = true;
     for (let i = 0; i < 3; i += 1) {
       console.log(`Question:  ${dataGame[1][i][0]}`);
       const answer = getAnswer();
@@ -27,10 +32,11 @@ const gameStart = (gameName) => {
         console.log('Correct!');
       } else {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dataGame[1][i][1]} '.\n Let's try again`);
+        winner = false;
         break;
       }
-      console.log(`Congratulations, ${name}!`);
     }
+    if (winner)console.log(`Congratulations, ${name}!`);
   }
 };
 
