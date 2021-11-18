@@ -3,7 +3,8 @@ import brainEven from './games/even.js';
 import brainCalc from './games/calc.js';
 import brainGcd from './games/gcd.js';
 import brainProgression from './games/progression.js';
-import getAnswer from '../getAnswer.js';
+import brainPrime from './games/prime.js';
+import getAnswer from './getAnswer.js';
 
 const gameStart = (gameName) => {
   console.log('Welcome to the Brain Games!');
@@ -24,6 +25,9 @@ const gameStart = (gameName) => {
       case 'brainProgression':
         dataGame = brainProgression();
         break;
+      case 'brainPrime':
+        dataGame = brainPrime();
+        break;
       default:
         break;
     }
@@ -32,10 +36,10 @@ const gameStart = (gameName) => {
     for (let i = 0; i < 3; i += 1) {
       console.log(`Question:  ${dataGame[1][i][0]}`);
       const answer = getAnswer();
-      if (+(answer) === dataGame[1][i][1]) {
+      if ((answer) === String(dataGame[1][i][1])) {
         console.log('Correct!');
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dataGame[1][i][1]} '.\n Let's try again`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dataGame[1][i][1]}'.\n Let's try again`);
         winner = false;
         break;
       }

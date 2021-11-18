@@ -2,4 +2,4 @@
 
 import gameStart from '../src/index.js';
 
-gameStart('brainCalc');
+gameStart('brainPrime');
