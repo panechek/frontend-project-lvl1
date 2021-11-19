@@ -23,7 +23,7 @@ const brainCalc = () => {
       default:
         break;
     }
-    numVariant.push([`${a}${c}${b}`, answer]);
+    numVariant.push([`${a} ${c} ${b}`, answer]);
   }
   data[1] = numVariant;
   return data;
