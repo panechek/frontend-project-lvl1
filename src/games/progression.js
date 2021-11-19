@@ -10,6 +10,7 @@ const brainProgression = () => {
     const a = randomNumber(10);
     const answer = progression[a];
     progression[a] = '..';
+    progression.join(' ');
     numVariant.push([progression, answer]);
   }
   data[1] = numVariant;
