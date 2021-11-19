@@ -34,7 +34,7 @@ const gameStart = (gameName) => {
     console.log(dataGame[0]);
     let winner = true;
     for (let i = 0; i < 3; i += 1) {
-      console.log(`'Question: '${dataGame[1][i][0]}`);
+      console.log(`Question: ${dataGame[1][i][0]}`);
       const answer = getAnswer();
       if ((answer) === String(dataGame[1][i][1])) {
         console.log('Correct!');
