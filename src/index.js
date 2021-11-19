@@ -39,7 +39,7 @@ const gameStart = (gameName) => {
       if ((answer) === String(dataGame[1][i][1])) {
         console.log('Correct!');
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dataGame[1][i][1]}'.\n Let's try again`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dataGame[1][i][1]}'.\n Let's try again, ${name}!`);
         winner = false;
         break;
       }
